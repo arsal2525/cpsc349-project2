@@ -6,8 +6,56 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="{{ '/styles/tailwind.css' | url }}">
         <link rel="stylesheet" href="{{ '/styles/main.css' | url }}">
+        <style>
+    :root {
+  --red: {{red}};
+  --green: {{green}};
+  --blue: {{blue}};
+
+  --accessible-color: calc(
+    (
+      (
+        (
+          (var(--red) * 299) +
+          (var(--green) * 587) +
+          (var(--blue) * 114)
+        ) / 1000
+      ) - 128
+    ) * -1000
+  );
+}
+
+body {
+  color:
+    rgb(
+      var(--accessible-color),
+      var(--accessible-color),
+      var(--accessible-color)
+    );
+  background-color:
+    rgb(
+      var(--red),
+      var(--green),
+      var(--blue)
+    );
+}
+        </style>
+
     </head>
-    <body>
-        {{ content }}
-    </body>
-</html>
+<body style="background-color: {{hex}};">
+  <div class="grid2">
+    <div class="content2">
+    {{ content }}
+    </div>
+
+    <div class="footer2">
+
+    <footer>
+      Site Created by Alfredo Alcantar, Arsal Khan, Josephine Overbeek & Pedro Hernandez |
+      Contact: <a href="mailto:Group3@csu.fullerton.edu.com" id="contact-info"> Group3@csu.fullerton.edu.com</a>
+    </footer>
+
+    </div>
+  </div>
+
+</body>

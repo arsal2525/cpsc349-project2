@@ -4,10 +4,48 @@
         <title> - Pet Photos</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="stylesheet" href="/cpsc349-project2/styles/tailwind.css">
+        <link rel="stylesheet" href="/cpsc349-project2/styles/tailwind.css">
+        <link rel="stylesheet" href="/cpsc349-project2/styles/main.css">
+        <style>
+    :root {
+  --red: 207;
+  --green: 190;
+  --blue: 164;
+
+  --accessible-color: calc(
+    (
+      (
+        (
+          (var(--red) * 299) +
+          (var(--green) * 587) +
+          (var(--blue) * 114)
+        ) / 1000
+      ) - 128
+    ) * -1000
+  );
+}
+
+body {
+  color:
+    rgb(
+      var(--accessible-color),
+      var(--accessible-color),
+      var(--accessible-color)
+    );
+  background-color:
+    rgb(
+      var(--red),
+      var(--green),
+      var(--blue)
+    );
+}
+        </style>
+
     </head>
-    <body>
-        <h1>Pet Photos</h1>
+<body style="background-color: CFBEA4;">
+  <div class="grid2">
+    <div class="content2">
+    <h1>Pet Photos</h1>
 
 
     <a href="/cpsc349-project2/">Home</a>
@@ -723,5 +761,21 @@
     
 </ul>
 
-    </body>
-</html>
+    
+    <figure>
+    <figcaption> Type of camera used: ILCE-7M2 </figcaption>
+    <figcaption>Photo ID: Xg2hPPvpeSU</figcaption>
+ </figure>
+    
+
+    </div>
+
+    <div class="footer2">
+    <footer>
+        <p>Site Created by Alfredo Alcantar, Arsal Khan, Josephine Overbeek, Pedro Hernandez</p>
+        <p>Contact: <a href="">Group3@csu.fullerton.edu.com</a></p>
+    </footer>
+    </div>
+  </div>
+
+</body>

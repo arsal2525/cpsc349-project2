@@ -9,14 +9,14 @@ layout: base
 {% endunless %}
 
 {{ content }}
+{% unless photos %}
+  <div>
 
-<ul>
-    {% for photo in collections.photos %}
-        <li>
-            <a href="{{ photo.url | url }}">
-                A {{ photo.data.photo_keyword }} photo
-                by {{ photo.data.photographer_first_name}} {{ photo.data.photographer_last_name }}
-            </a>
-        </li>
-    {% endfor %}
-</ul>
+  <figure>
+      <figcaption> Type of camera used: {{ exif_camera_model }} </figcaption>
+      <figcaption>Photographers Username: <strong>{{ photographer_username }}</strong></figcaption>
+      <figcaption>Click on the link to be taken to full size photo. <a href="{{ photo_image_url }}" target="_blank">View Photo</a></figcaption>
+   </figure>
+
+  </div>
+  {% endunless %}

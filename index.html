@@ -1,9 +1,76 @@
 ---
 title: Welcome
-layout: pets
+layout: base
+pagination:
+ data: collections.photos
+ size: 10
+ alias: photos
 ---
-<p>
-    Pet photos from
-    <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
-        Unsplash
-    </a>
+
+<!DOCTYPE html>
+<html class = "index-bg" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="/styles/main.css">
+  </head>
+  <body class ="photo-bg">
+<div class="grid">
+  <div class="header">
+  {% include header.html %}
+  </div>
+  <div class="content">
+    <h1 class="w-h">Pet Photos Galore</h1>
+    <br>
+    <h2>Welcome to our website!</h2>
+    <br>
+        <p>This site contains professionally photographed pictures of pets, such as dogs, cats, and rats.
+            Click on one of the links to view a photo about that pet.
+        </p>
+
+        <br>
+        <p><strong>There you will also see a description of the following</strong></p>
+        <br>
+        <ol>
+            <li class ="list"> The photographer userame</li>
+            <li class ="list"> The camera model used</li>
+            <li class ="list"> and a link to the full size image</li>
+        </ol>
+        <br>
+        <p>
+            Pet photos from
+            <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+                Unsplash
+            </a>
+        </p>
+
+
+        <div>
+          <br>
+            {% for photo in photos %}
+            <li>
+                <a href="{{ photo.url | url }}">
+                    A {{ photo.data.photo_keyword }} photo
+                    by {{ photo.data.photographer_first_name}} {{ photo.data.photographer_last_name }}
+                </a>
+            </li>
+            {% endfor %}
+        </div>
+
+    <div class = "a-center">
+        {% if pagination.href.previous %}
+    <a href="{{ pagination.href.previous | url }}">Previous Page</a>
+    {% endif %}
+    {% if pagination.href.next %}
+    <a href="{{pagination.href.next | url }}">Next Page</a>
+    {% endif %}
+    </div>
+</div>
+<br>
+<br>
+<br>
+
+  </body>
+</html>
