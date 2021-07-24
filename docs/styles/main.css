@@ -3,11 +3,12 @@
   padding: 0;
 }
 
-body {
+body.stats-bg, body.index-bg, body.photo-bg, body.about-bg{
   background-image: url("/images/1567873.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  margin: 1vw;
 }
 /*
 index.html
@@ -48,7 +49,21 @@ text-decoration: none;
     grid-column: 1/4;
   }
 
-/**/
+.a-center {
+    text-align: center;
+}
+
+ol {
+  margin-left: 1vw;
+}
+
+.list{
+  margin-left: 10px;
+  list-style-type: circle;
+}
+
+/*base.html*/
+
 .grid2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -64,6 +79,37 @@ text-decoration: none;
   text-align: center;
   }
 
+.footer2 {
+      font-style: oblique;
+      font-size: 150%;
+      width: 100%;
+      background-color: darkblue;
+      display:flex;
+      justify-content: center;
+      color: white;
+      padding: 1%;
+      left: 0;
+      bottom: 0;
+  }
+
+  #contact-info {
+      text-decoration: none;
+      color: white;
+  }
+
+
+/*about.html*/
+
+.about-ul {
+  margin-left: 1vw;
+}
+
+
+.styles {
+margin-left: 5vw;
+list-style-type: square;
+}
+
 /*stats.html*/
 
 border-collapse: collapse;
@@ -75,10 +121,10 @@ border: 1px solid black;
 padding: 8px;
 }
 #stats tr:nth-child(even){
-background-color: #00ff99;
+background-color:#D8D8D8;
 }
 #stats tr:nth-child(odd){
-background-color:#00ff99;
+background-color:#D8D8D8;
 }
 #stats tr:hover {
 background-color: grey;
@@ -93,19 +139,8 @@ color: white;
 }
 
 
-
-
-/*
-@media screen and (min: 736px) {
-  .grid {
-  display: grid;
-  grid-template-columns: 1fr 500px 500px 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas:
-  ". title title ."
-  ". header header ."
-  ". sidebar content ."
-  ". footer footer .";
+@media screen and (min-width: 600px) {
+  body {
+    background-color: white;
   }
 }
-*/
