@@ -3,6 +3,14 @@
   padding: 0;
 }
 
+ol {
+  margin-left: 1vw;
+}
+
+ul {
+  margin: 1vw;
+}
+
 body.stats-bg, body.index-bg, body.photo-bg, body.about-bg{
   background-image: url("/images/1567873.jpg");
   background-repeat: no-repeat;
@@ -10,6 +18,7 @@ body.stats-bg, body.index-bg, body.photo-bg, body.about-bg{
   background-size: cover;
   margin: 1vw;
 }
+
 /*
 index.html
 
@@ -51,10 +60,6 @@ text-decoration: none;
 
 .a-center {
     text-align: center;
-}
-
-ol {
-  margin-left: 1vw;
 }
 
 .list{
@@ -140,7 +145,10 @@ color: white;
 
 
 @media screen and (min-width: 600px) {
-  body {
-    background-color: white;
+  .nav a{
+  color: #333333;
+  font-size: 1rem;
+  text-decoration: none;
+  margin: 0.4rem;
   }
 }
