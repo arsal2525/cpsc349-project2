@@ -56,7 +56,7 @@ pagination:
           <br>
             {% for photo in photos %}
             <li>
-                <a href="{{ photo.url | url }}">
+                <a href="{{ /cpsc349-project2/photo.url | url }}">
                     A {{ photo.data.photo_keyword }} photo
                     by {{ photo.data.photographer_first_name}} {{ photo.data.photographer_last_name }}
                 </a>
@@ -66,10 +66,10 @@ pagination:
 
     <div class = "a-center">
         {% if pagination.href.previous %}
-    <a href="{{ pagination.href.previous | url }}">Previous Page</a>
+    <a href="{{ /cpsc349-project2/pagination.href.previous | url }}">Previous Page</a>
     {% endif %}
     {% if pagination.href.next %}
-    <a href="{{pagination.href.next | url }}">Next Page</a>
+    <a href="{{ /cpsc349-project2/pagination.href.next | url }}">Next Page</a>
     {% endif %}
     </div>
 </div>
